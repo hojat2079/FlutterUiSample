@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "KenGen Power",
+    "data": "12-01-08",
+    "status": false,
+    "due": "1280.00",
+    "more": "Pay before",
+    "img": "images/brand1.png"
+  },
+  {
+    "brand": "Tech Power",
+    "data": "11-11-08",
+    "status": false,
+    "due": "3280.00",
+    "more": "You must pay now",
+    "img": "images/brand2.png"
+  },
+  {
+    "brand": "Airtel Power",
+    "data": "12-01-08",
+    "status": false,
+    "due": "1387.00",
+    "more": "Dou is 3 days",
+    "img": "images/brand3.png"
+  }
+]
