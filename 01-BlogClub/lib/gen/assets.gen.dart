@@ -16,6 +16,10 @@ class $AssetsImgGen {
   $AssetsImgIconsGen get icons => const $AssetsImgIconsGen();
   $AssetsImgPostsGen get posts => const $AssetsImgPostsGen();
   $AssetsImgStoriesGen get stories => const $AssetsImgStoriesGen();
+
+  /// File path: assets/img/story-content.png
+  AssetGenImage get storyContent =>
+      const AssetGenImage('assets/img/story-content.png');
 }
 
 class $AssetsImgBackgroundGen {
@@ -32,6 +36,10 @@ class $AssetsImgBackgroundGen {
   /// File path: assets/img/background/splash.png
   AssetGenImage get splash =>
       const AssetGenImage('assets/img/background/splash.png');
+
+  /// File path: assets/img/background/story.png
+  AssetGenImage get story =>
+      const AssetGenImage('assets/img/background/story.png');
 }
 
 class $AssetsImgIconsGen {
@@ -60,6 +68,9 @@ class $AssetsImgIconsGen {
   /// File path: assets/img/icons/Twitter.png
   AssetGenImage get twitter =>
       const AssetGenImage('assets/img/icons/Twitter.png');
+
+  /// File path: assets/img/icons/arrow.svg
+  SvgGenImage get arrow => const SvgGenImage('assets/img/icons/arrow.svg');
 
   /// File path: assets/img/icons/article.png
   AssetGenImage get article =>

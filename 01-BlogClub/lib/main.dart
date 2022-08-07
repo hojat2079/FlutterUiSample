@@ -2,6 +2,7 @@ import 'package:advance_ui_sevenlearn/article.dart';
 import 'package:advance_ui_sevenlearn/home.dart';
 import 'package:advance_ui_sevenlearn/profile.dart';
 import 'package:advance_ui_sevenlearn/search.dart';
+import 'package:advance_ui_sevenlearn/splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,52 +61,53 @@ class MyApp extends StatelessWidget {
             backgroundColor: primaryColor,
             contentTextStyle: TextStyle(color: Colors.white)),
         textTheme: TextTheme(
-            headline6: TextStyle(
+          headline6: TextStyle(
+            fontFamily: defaultFontFamily,
+            fontWeight: FontWeight.w700,
+            fontSize: 18,
+            color: primaryTextColor,
+          ),
+          headline5: TextStyle(
               fontFamily: defaultFontFamily,
               fontWeight: FontWeight.w700,
-              fontSize: 18,
+              fontSize: 20,
+              color: primaryTextColor),
+          headline4: TextStyle(
+              fontFamily: defaultFontFamily,
+              fontWeight: FontWeight.w700,
               color: primaryTextColor,
-            ),
-            headline5: TextStyle(
-                fontFamily: defaultFontFamily,
-                fontWeight: FontWeight.w700,
-                fontSize: 20,
-                color: primaryTextColor),
-            headline4: TextStyle(
-                fontFamily: defaultFontFamily,
-                fontWeight: FontWeight.w700,
-                color: primaryTextColor,
-                fontSize: 24),
-            subtitle1: TextStyle(
+              fontSize: 24),
+          subtitle1: TextStyle(
+            fontFamily: defaultFontFamily,
+            color: secondaryTextColor,
+            fontWeight: FontWeight.w200,
+            fontSize: 18,
+          ),
+          subtitle2: TextStyle(
+            fontFamily: defaultFontFamily,
+            color: primaryTextColor,
+            fontWeight: FontWeight.w400,
+            fontSize: 14,
+          ),
+          bodyText1: TextStyle(
+            fontFamily: defaultFontFamily,
+            fontWeight: FontWeight.w400,
+            color: primaryTextColor,
+            fontSize: 14,
+          ),
+          bodyText2: TextStyle(
+            fontFamily: defaultFontFamily,
+            color: secondaryTextColor,
+            fontSize: 12,
+          ),
+          caption: TextStyle(
               fontFamily: defaultFontFamily,
-              color: secondaryTextColor,
-              fontWeight: FontWeight.w200,
-              fontSize: 18,
-            ),
-            subtitle2: TextStyle(
-              fontFamily: defaultFontFamily,
-              color: primaryTextColor,
-              fontWeight: FontWeight.w400,
-              fontSize: 14,
-            ),
-            bodyText1: TextStyle(
-              fontFamily: defaultFontFamily,
-              fontWeight: FontWeight.w400,
-              color: primaryTextColor,
-              fontSize: 14,
-            ),
-            bodyText2: TextStyle(
-              fontFamily: defaultFontFamily,
-              color: secondaryTextColor,
-              fontSize: 12,
-            ),
-            caption: TextStyle(
-                fontFamily: defaultFontFamily,
-                color: const Color(0xff7B8BB2),
-                fontSize: 10,
-                fontWeight: FontWeight.w800)),
+              color: const Color(0xff7B8BB2),
+              fontSize: 10,
+              fontWeight: FontWeight.w800),
+        ),
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

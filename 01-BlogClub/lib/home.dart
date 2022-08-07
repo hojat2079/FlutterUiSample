@@ -1,8 +1,10 @@
 import 'package:advance_ui_sevenlearn/article.dart';
 import 'package:advance_ui_sevenlearn/gen/fonts.gen.dart';
+import 'package:advance_ui_sevenlearn/story.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'carousel/carousel_slider.dart';
 import 'data.dart';
@@ -13,6 +15,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+          systemNavigationBarColor: themeData.colorScheme.background,
+          systemNavigationBarIconBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarColor: themeData.colorScheme.background),
+    );
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: [
+        SystemUiOverlay.bottom, // Shows Status bar and hides Navigation bar
+        SystemUiOverlay.top, // Shows Status bar and hides Navigation bar
+      ],
+    );
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -184,7 +200,17 @@ class _StoryList extends StatelessWidget {
           final StoryData story = stories[index];
           return _Story(
             story: story,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (
+                    context,
+                  ) =>
+                      const StoryScreen(),
+                ),
+              );
+            },
           );
         },
       ),
