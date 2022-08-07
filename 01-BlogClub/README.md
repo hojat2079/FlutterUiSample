@@ -1,16 +1,9 @@
-# advance_ui_sevenlearn
+# BlogClubUiDesign
 
-A new Flutter project.
+This is ui Design blogClub app used for social media.
 
-## Getting Started
+In this project, many widgets and concepts such as stack, flutter svg, fluttergen, Google fonts, carousel, Sliver and more have been implemented.
 
-This project is a starting point for a Flutter application.
+figma: [Link](https://www.figma.com/file/EcKZKtOBzytGyik8QQoajr/Blog-Club?node-id=1%3A849)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![figma](https://s6.uupload.ir/files/annotation_2022-03-23_161127_h4z3.jpg)
