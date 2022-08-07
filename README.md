@@ -23,3 +23,39 @@ A collection of ui sample with Flutter.
   <img src="https://s6.uupload.ir/files/4_9yfk.jpg" width="200"/>
   <img src="https://s6.uupload.ir/files/1_a4g2.jpg" width="800"/>
  </div>
+ 
+ <br /> <br />
+## 04-Payment
+
+<div>
+    <img src="04-Payment/screenshots/payment1.png" width="200" />
+    <img src="04-Payment/screenshots/payment2.png" width="200" />
+    <img src="04-Payment/screenshots/payment3.png" width="200" />
+ </div>
+ 
+ <br /> <br />
+ 
+## 05-ClubHouse
+
+<div>
+  <img src="05-ClubHouse/screenshots/clubhouse1.png" width="200" />
+  <img src="05-ClubHouse/screenshots/clubhouse2.png" width="200" />
+ </div>
+ 
+ <br /> <br />
+ 
+## 06-MoneyManagement
+
+<div>
+  <img src="06-MoneyManagement/screenshots/money1.png" width="200" />
+ </div>
+ 
+ <br /> <br />
+## 07-OtpVerification
+
+<div>
+  <img src="07-OtpVerification/screenshots/otp1.png" width="200" />
+  <img src="07-OtpVerification/screenshots/otp2.png" width="200" />
+  <img src="07-OtpVerification/screenshots/otp3.png" width="200" />
+ </div>
+ 
