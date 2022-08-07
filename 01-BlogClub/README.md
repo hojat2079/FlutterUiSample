@@ -1,4 +1,4 @@
-# sevenlearn_simple_design
+# advance_ui_sevenlearn
 
 A new Flutter project.
 
