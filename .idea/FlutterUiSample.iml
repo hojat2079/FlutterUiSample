@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/04-Payment/build" />
+      <excludeFolder url="file://$MODULE_DIR$/04-Payment/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/04-Payment/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/07-OtpVerification/build" />
+      <excludeFolder url="file://$MODULE_DIR$/07-OtpVerification/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/07-OtpVerification/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/01-BlogClub/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/01-BlogClub/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/01-BlogClub/build" />
+      <excludeFolder url="file://$MODULE_DIR$/06-MoneyManagement/build" />
+      <excludeFolder url="file://$MODULE_DIR$/06-MoneyManagement/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/06-MoneyManagement/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-ClubHouse/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/05-ClubHouse/build" />
+      <excludeFolder url="file://$MODULE_DIR$/05-ClubHouse/.dart_tool" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
