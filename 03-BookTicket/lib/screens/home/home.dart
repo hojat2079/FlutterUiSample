@@ -7,6 +7,7 @@ import 'package:ticket_booking/data/ticket_data.dart';
 import 'package:ticket_booking/screens/home/hotel_view.dart';
 import 'package:ticket_booking/screens/home/ticket_view.dart';
 import 'package:ticket_booking/utils/style.dart';
+import 'package:ticket_booking/widgets/two_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,13 +26,13 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Style.bgColor,
       body: SafeArea(
         child: ListView(
+          padding: const EdgeInsets.only(top: 40),
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 12),
-              child: Column(
-                children: [
-                  const Gap(40),
-                  Row(
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 20, left: 20),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
@@ -48,62 +49,46 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            'assets/images/logo.png',
-                            width: 50,
-                            height: 40,
-                          ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          width: 50,
+                          height: 40,
                         ),
                       )
                     ],
                   ),
-                  const Gap(25),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xfff4f6fd),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          FluentSystemIcons.ic_fluent_search_regular,
-                          color: Colors.grey.shade500,
-                        ),
-                        const Gap(4),
-                        Text(
-                          'Search',
-                          style: Style.headLine4TextStyle,
-                        )
-                      ],
-                    ),
+                ),
+                const Gap(25),
+                Container(
+                  margin: const EdgeInsets.only(right: 20, left: 20),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: const Color(0xfff4f6fd),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  const Gap(40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Row(
                     children: [
-                      Text(
-                        'Upcoming Flights',
-                        style: Style.headLine2TextStyle,
+                      Icon(
+                        FluentSystemIcons.ic_fluent_search_regular,
+                        color: Colors.grey.shade500,
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                        child: Text(
-                          'View All',
-                          style: Style.defaultTextStyle
-                              .apply(color: Colors.blueGrey),
-                        ),
+                      const Gap(4),
+                      Text(
+                        'Search',
+                        style: Style.headLine4TextStyle,
                       )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),
+                const Gap(40),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20, right: 12),
+                  child:
+                      TwoTextView(text1: 'Upcoming Flights', text2: 'View All'),
+                ),
+              ],
             ),
             const Gap(15),
             SizedBox(
@@ -121,27 +106,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const Gap(15),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Hotels',
-                    style: Style.headLine2TextStyle,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                    child: Text(
-                      'View All',
-                      style:
-                          Style.defaultTextStyle.apply(color: Colors.blueGrey),
-                    ),
-                  )
-                ],
-              ),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, right: 12),
+              child: TwoTextView(text1: 'Hotels', text2: 'View All'),
             ),
             const Gap(15),
             SizedBox(
