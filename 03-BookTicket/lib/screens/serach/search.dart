@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking/screens/serach/icon_text.dart';
 import 'package:ticket_booking/utils/style.dart';
+import 'package:ticket_booking/widgets/toggle_group.dart';
 import 'package:ticket_booking/widgets/two_text.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -14,47 +15,16 @@ class SearchScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.only(left: 20, right: 12, top: 40),
+          physics: const BouncingScrollPhysics(),
           children: [
             Text(
               'What are\nyou looking for?',
               style: Style.headLine1TextStyle.copyWith(fontSize: 32),
             ),
             const Gap(20),
-            Container(
-              padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
-              height: 36,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      child: const Text(
-                        'Airline Tickets',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 1,
-                    color: const Color(0xffbfc2df),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      child: const Text(
-                        'Hotels',
-                        style: TextStyle(color: Colors.grey),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+            const CustomToggleGroup(
+              text1: 'Airline Tickets',
+              text2: 'Hotels',
             ),
             const Gap(25),
             const IconTextView(

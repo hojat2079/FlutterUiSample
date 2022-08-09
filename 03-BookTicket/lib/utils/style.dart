@@ -28,9 +28,8 @@ class Style {
     color: textColor,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headLine3TextStyle = TextStyle(
+  static TextStyle headLine3TextStyle = const TextStyle(
     fontSize: 17,
-    color: Colors.grey.shade500,
     fontWeight: FontWeight.w500,
   );
   static TextStyle headLine4TextStyle = TextStyle(

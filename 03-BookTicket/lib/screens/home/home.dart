@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Style.bgColor,
       body: SafeArea(
         child: ListView(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.only(top: 40),
           children: [
             Column(
@@ -92,7 +93,7 @@ class HomeScreen extends StatelessWidget {
             ),
             const Gap(15),
             SizedBox(
-              height: 200,
+              height: 169,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -105,7 +106,7 @@ class HomeScreen extends StatelessWidget {
                 itemCount: ticketList.length,
               ),
             ),
-            const Gap(15),
+            const Gap(32),
             const Padding(
               padding: EdgeInsets.only(left: 20, right: 12),
               child: TwoTextView(text1: 'Hotels', text2: 'View All'),

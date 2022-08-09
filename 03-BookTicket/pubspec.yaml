@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   fluentui_icons: ^1.0.0
   gap: ^2.0.0
+  barcode_widget: ^2.0.2
 
 dev_dependencies:
   flutter_test:
