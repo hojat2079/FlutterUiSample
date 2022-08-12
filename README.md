@@ -11,6 +11,7 @@ A collection of ui sample with Flutter.
   <img src="01-BlogClub/screenshots/blog4.png" width="200" />
   <img src="01-BlogClub/screenshots/blog5.png" width="200" />
   <img src="01-BlogClub/screenshots/blog6.png" width="200" />
+  <img src="01-BlogClub/screenshots/blog7.png" width="200" />
  </div>
 
 

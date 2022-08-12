@@ -1,11 +1,13 @@
 import 'package:advance_ui_sevenlearn/article.dart';
 import 'package:advance_ui_sevenlearn/home.dart';
+import 'package:advance_ui_sevenlearn/new_article.dart';
 import 'package:advance_ui_sevenlearn/profile.dart';
 import 'package:advance_ui_sevenlearn/search.dart';
 import 'package:advance_ui_sevenlearn/splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -107,7 +109,7 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.w800),
         ),
       ),
-      home: const SplashScreen(),
+      home: const MainPage(),
     );
   }
 }
@@ -126,6 +128,7 @@ class _MainPageState extends State<MainPage> {
   final GlobalKey<NavigatorState> _articleKey = GlobalKey();
   final GlobalKey<NavigatorState> _menuKey = GlobalKey();
   final GlobalKey<NavigatorState> _searchKey = GlobalKey();
+  final GlobalKey<NavigatorState> _newArticleKey = GlobalKey();
 
   final List<int> _history = [];
 
@@ -134,6 +137,7 @@ class _MainPageState extends State<MainPage> {
     articlePageIndex: _articleKey,
     searchPageIndex: _searchKey,
     menuPageIndex: _menuKey,
+    newArticlePageIndex: _newArticleKey
   };
 
   Future<bool> _onWillPop() async {
@@ -178,6 +182,8 @@ class _MainPageState extends State<MainPage> {
                   _navigatorItem(
                       _searchKey, searchPageIndex, const SearchPage()),
                   _navigatorItem(_menuKey, menuPageIndex, const ProfilePage()),
+                  _navigatorItem(_newArticleKey, newArticlePageIndex,
+                      const NewArticlePage())
                 ],
               ),
             ),
@@ -188,15 +194,25 @@ class _MainPageState extends State<MainPage> {
               child: _BottomNavigationView(
                 onTab: (int index) {
                   if (index != selectedIndexPage) {
-                    setState(() {
-                      _history.remove(selectedIndexPage);
-                      _history.remove(index);
-                      _history.add(selectedIndexPage);
-                      selectedIndexPage = index;
-                    });
+                    setState(
+                      () {
+                        _history.remove(selectedIndexPage);
+                        _history.remove(index);
+                        _history.add(selectedIndexPage);
+                        selectedIndexPage = index;
+                      },
+                    );
                   }
                 },
                 selectIndexPage: selectedIndexPage,
+                onBackTab: () {
+                  setState(
+                    () {
+                      _history.remove(selectedIndexPage);
+                      selectedIndexPage = _history.last;
+                    },
+                  );
+                },
               ),
             ),
           ],
@@ -221,14 +237,17 @@ const homePageIndex = 0;
 const articlePageIndex = 1;
 const searchPageIndex = 2;
 const menuPageIndex = 3;
+const newArticlePageIndex = 4;
 
 class _BottomNavigationView extends StatelessWidget {
   const _BottomNavigationView({
     Key? key,
     required this.onTab,
+    required this.onBackTab,
     required this.selectIndexPage,
   }) : super(key: key);
   final Function(int index) onTab;
+  final Function() onBackTab;
   final int selectIndexPage;
 
   @override
@@ -303,18 +322,32 @@ class _BottomNavigationView extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(32.5),
               ),
-              child: Container(
-                margin: const EdgeInsets.all(4),
-                height: 57,
-                width: 57,
-                decoration: BoxDecoration(
-                  color: const Color(0xff376AED),
-                  borderRadius: BorderRadius.circular(32.5),
-                ),
-                child: const Icon(
-                  CupertinoIcons.add,
-                  color: Color(0xFF8FE6FF),
-                ),
+              child: InkWell(
+                onTap: () {
+                  selectIndexPage != newArticlePageIndex
+                      ? onTab(newArticlePageIndex)
+                      : onBackTab();
+                },
+                child: Container(
+                    margin: const EdgeInsets.all(4),
+                    height: 57,
+                    width: 57,
+                    decoration: BoxDecoration(
+                      color: selectIndexPage != newArticlePageIndex
+                          ? const Color(0xff376AED)
+                          : const Color(0xff0D253C),
+                      borderRadius: BorderRadius.circular(32.5),
+                    ),
+                    child: Transform.rotate(
+                      angle: selectIndexPage != newArticlePageIndex ? 0 : 0.75,
+                      child: Icon(
+                        CupertinoIcons.add,
+                        size: 28,
+                        color: selectIndexPage != newArticlePageIndex
+                            ? const Color(0xFF8FE6FF)
+                            : Colors.white,
+                      ),
+                    )),
               ),
             ),
           )

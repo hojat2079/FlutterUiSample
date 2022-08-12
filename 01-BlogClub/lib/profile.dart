@@ -13,6 +13,7 @@ class ProfilePage extends StatelessWidget {
     final themeData = Theme.of(context);
     final posts = AppData.posts;
     return Scaffold(
+      backgroundColor: themeData.colorScheme.background,
       appBar: AppBar(
         backgroundColor: themeData.colorScheme.background.withOpacity(0),
         titleTextStyle: themeData.textTheme.headline4,
